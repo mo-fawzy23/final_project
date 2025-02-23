@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           home: FlutterSplashScreen.scale(
-            duration: const Duration(seconds: 10),
-            animationDuration: const Duration(seconds: 10),
+            duration: const Duration(seconds: 5),
+            animationDuration: const Duration(seconds: 5),
             backgroundColor: Colors.white,
             onInit: () {
               // debugPrint("On Init");
