@@ -13,7 +13,9 @@ class ThirdInboundScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         actions: [
           TextButton(
             onPressed: () {
@@ -38,7 +40,7 @@ class ThirdInboundScreen extends StatelessWidget {
           SizedBox(height: 50.h),
           const InboundWidget(
             title: "Fast & Secure\npayment",
-            pic: Assets.svgsInbound1,
+            pic: Assets.svgsInbound3,
             subtitle:
                 "There are many payment options available to speed up and simplify your payment\nprocess.",
           ),

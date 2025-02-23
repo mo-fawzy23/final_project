@@ -14,12 +14,16 @@ class FirstInboundScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const MainScreen()));
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MainScreen()),
+              );
             },
             child: Text(
               "Skip",
@@ -41,8 +45,8 @@ class FirstInboundScreen extends StatelessWidget {
             subtitle:
                 "Here you'll see rich varieties of goods, carefully classified for seamless browsing experience",
           ),
-          SizedBox(height: 32.h,),
-          const CustomCircleProgress(value: 0.5,screen: SecondInboundScreen(),),
+          SizedBox(height: 32.h),
+          const CustomCircleProgress(value: 0.5, screen: SecondInboundScreen()),
         ],
       ),
     );
