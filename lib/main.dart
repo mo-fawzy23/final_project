@@ -1,5 +1,9 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
+import 'package:final_project/feature/auth/presentation/login_screen.dart';
+import 'package:final_project/feature/auth/presentation/otb_screen.dart';
+import 'package:final_project/feature/auth/presentation/register_screen.dart';
 import 'package:final_project/feature/inbound/presentation/first_inbound_screen.dart';
+import 'package:final_project/feature/intro/presentation/splash_screen.dart';
 import 'package:final_project/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,43 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (_,child){
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: FlutterSplashScreen.scale(
-            duration: const Duration(seconds: 5),
-            animationDuration: const Duration(seconds: 5),
-            backgroundColor: Colors.white,
-            onInit: () {
-              // debugPrint("On Init");
-            },
-            onEnd: () {
-              // debugPrint("On End");
-            },
-            childWidget: SizedBox(
-              height: 200.h,
-              child: Container(
-                width: double.infinity,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(Assets.svgsLogo),
-                    SizedBox(height: 34.h),
-                    Text(
-                      "zalada",
-                      style: GoogleFonts.plusJakartaSans(
-                        textStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 40.sp,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            // onAnimationEnd: () => debugPrint("On Fade In End"),
-            nextScreen: FirstInboundScreen(),
-          ),
+          home: SplashScreen()
         );
       },
       );

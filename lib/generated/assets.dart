@@ -2,9 +2,14 @@
 class Assets {
   Assets._();
 
+  static const String svgsIconFacebook = 'assets/app/images/svgs/icon_facebook.svg';
+  static const String svgsIconGoogle = 'assets/app/images/svgs/icon_google.svg';
   static const String svgsInbound1 = 'assets/app/images/svgs/inbound1.svg';
   static const String svgsInbound2 = 'assets/app/images/svgs/inbound2.svg';
   static const String svgsInbound3 = 'assets/app/images/svgs/inbound3.svg';
   static const String svgsLogo = 'assets/app/images/svgs/logo.svg';
+  static const String svgsOtb = 'assets/app/images/svgs/otb.svg';
+  static const String svgsOtbSuccess = 'assets/app/images/svgs/otb_success.svg';
+  static const String svgsSendIcon = 'assets/app/images/svgs/send_icon.svg';
 
 }
