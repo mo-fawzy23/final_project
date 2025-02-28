@@ -38,6 +38,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 16.h),
                 CustomTextInput(
+                  isPassword: true,
                   hintText: "Password",
                   labelText: "Password",
                   controller: passwordController,
@@ -115,7 +116,7 @@ class LoginScreen extends StatelessWidget {
                                           borderRadius: BorderRadius.circular(12.r)
                                         ),
                                         child: SvgPicture.asset(
-                                          Assets.svgsSendIcon,
+                                          Assets.iconsSendIcon,
                                         ),
                                       ),
                                       SizedBox(width: 16.w),

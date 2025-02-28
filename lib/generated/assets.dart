@@ -2,14 +2,23 @@
 class Assets {
   Assets._();
 
-  static const String svgsIconFacebook = 'assets/app/images/svgs/icon_facebook.svg';
-  static const String svgsIconGoogle = 'assets/app/images/svgs/icon_google.svg';
+  static const String iconsCredit = 'assets/app/images/svgs/icons/credit.svg';
+  static const String iconsIconFacebook = 'assets/app/images/svgs/icons/icon_facebook.svg';
+  static const String iconsIconGoogle = 'assets/app/images/svgs/icons/icon_google.svg';
+  static const String iconsPromotionIcon = 'assets/app/images/svgs/icons/promotion_icon.svg';
+  static const String iconsSendIcon = 'assets/app/images/svgs/icons/send_icon.svg';
+  static const String pngsApplePay = 'assets/app/images/pngs/apple_pay.png';
+  static const String pngsImg = 'assets/app/images/pngs/img.png';
+  static const String pngsImg1 = 'assets/app/images/pngs/img_1.png';
+  static const String pngsImg2 = 'assets/app/images/pngs/img_2.png';
+  static const String pngsMasterCard = 'assets/app/images/pngs/master_card.png';
+  static const String pngsPayment = 'assets/app/images/pngs/payment.png';
+  static const String pngsPaypal = 'assets/app/images/pngs/paypal.png';
   static const String svgsInbound1 = 'assets/app/images/svgs/inbound1.svg';
   static const String svgsInbound2 = 'assets/app/images/svgs/inbound2.svg';
   static const String svgsInbound3 = 'assets/app/images/svgs/inbound3.svg';
   static const String svgsLogo = 'assets/app/images/svgs/logo.svg';
   static const String svgsOtb = 'assets/app/images/svgs/otb.svg';
   static const String svgsOtbSuccess = 'assets/app/images/svgs/otb_success.svg';
-  static const String svgsSendIcon = 'assets/app/images/svgs/send_icon.svg';
 
 }

@@ -34,12 +34,14 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 16.h),
                 CustomTextInput(
+                  isPassword: true,
                   hintText: "Password",
                   labelText: "Password",
                   controller: passwordController,
                 ),
                 SizedBox(height: 16.h),
                 CustomTextInput(
+                  isPassword: true,
                   hintText: "Confirm password",
                   labelText: "Confirm Password",
                   controller: confirmPasswordController,

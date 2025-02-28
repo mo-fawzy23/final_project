@@ -9,5 +9,9 @@ class AppColor{
   static const line = Color(0xffEAEAEA);
   static const loginRegisterTextButton = Color(0xff1B5EC9);
   static const sendBorderColorIcon = Color(0xffF3F6FB);
+  static const selectedNav = Color(0xff2d3c52);
+  static const unselectedNav = Color(0xff989e9f);
+
+
 
 }

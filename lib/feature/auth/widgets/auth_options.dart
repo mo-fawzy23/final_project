@@ -47,12 +47,12 @@ class AuthOptions extends StatelessWidget {
         SizedBox(height: 24.h),
         const CustomGoogle(
           title: "Continue With Google",
-          imageIcon: Assets.svgsIconGoogle,
+          imageIcon: Assets.iconsIconGoogle,
         ),
         SizedBox(height: 16.h),
         const CustomGoogle(
           title: "Continue with facebook",
-          imageIcon: Assets.svgsIconFacebook,
+          imageIcon: Assets.iconsIconFacebook,
         ),
         SizedBox(height: 24.h),
         Row(
