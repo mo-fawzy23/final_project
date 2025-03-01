@@ -4,7 +4,7 @@ import 'package:final_project/feature/home/presentation/main_screen.dart';
 import 'package:final_project/feature/home/presentation/notification_screen.dart';
 import 'package:final_project/feature/home/presentation/wishlist_screen.dart';
 import 'package:final_project/feature/profile/presentation/profile_screen.dart';
-import 'package:final_project/feature/search/presentation/search_screen.dart';
+import 'package:final_project/feature/home/presentation/search_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

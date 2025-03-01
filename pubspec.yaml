@@ -44,6 +44,7 @@ dependencies:
   conditional_builder_null_safety: ^0.0.6
   shared_preferences: ^2.5.2
   carousel_slider: ^5.0.0
+  sqflite: ^2.4.2
 
 
 dev_dependencies:

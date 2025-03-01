@@ -1,4 +1,6 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
+import 'package:final_project/core/network/local/cache/cash_helper.dart';
+import 'package:final_project/core/network/local/data_base/local_db_helper.dart';
 import 'package:final_project/core/network/remote/dio_helper.dart';
 import 'package:final_project/feature/auth/presentation/login_screen.dart';
 import 'package:final_project/feature/auth/presentation/otb_screen.dart';
@@ -18,7 +20,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   DioHelper.init();
+  await SQLHelper.initDb();
+  await CacheHelper.init();
   runApp(const SplashScreen());
 }
 
