@@ -1,9 +1,12 @@
 import 'package:final_project/core/constants/app_color.dart';
 import 'package:final_project/core/widgets/custom_confirm_button.dart';
+import 'package:final_project/feature/auth/logic/auth_cubit.dart';
 import 'package:final_project/feature/auth/widgets/custom_google.dart';
+import 'package:final_project/feature/inbound/presentation/first_inbound_screen.dart';
 import 'package:final_project/generated/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,13 +15,20 @@ class AuthOptions extends StatelessWidget {
   final String haveAnAccountOrNo;
   final String textLR;
   final Widget screen;
-  const AuthOptions({super.key,required this.loginOrRegisterScreen, required this.textLR, required this.haveAnAccountOrNo, required this.screen});
+
+
+  const AuthOptions({
+    super.key,
+    required this.loginOrRegisterScreen,
+    required this.textLR,
+    required this.haveAnAccountOrNo,
+    required this.screen,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Column (
+    return Column(
       children: [
-        CustomConfirmButton(text:textLR,onTapWhere: (){},),
         SizedBox(height: 32.h),
         Row(
           children: [
@@ -69,7 +79,10 @@ class AuthOptions extends StatelessWidget {
             SizedBox(width: 1.w),
             TextButton(
               onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> screen));
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => screen),
+                );
               },
               child: Text(
                 loginOrRegisterScreen,

@@ -1,5 +1,6 @@
 import 'package:final_project/core/constants/app_color.dart';
 import 'package:final_project/core/widgets/custom_confirm_button.dart';
+import 'package:final_project/feature/profile/presentation/add_payment_method.dart';
 import 'package:final_project/feature/profile/widgets/custom_List_tile_payment.dart';
 import 'package:final_project/generated/assets.dart';
 import 'package:flutter/cupertino.dart';
@@ -129,7 +130,14 @@ class PaymentMethods extends StatelessWidget {
                             Spacer(),
                             CustomConfirmButton(
                               text: "Continue",
-                              onTapWhere: () {},
+                              onTapWhere: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AddPaymentMethod(),
+                                  ),
+                                );
+                              },
                             ),
                             SizedBox(height: 8.h),
                           ],

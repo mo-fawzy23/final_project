@@ -11,6 +11,7 @@ class AppColor{
   static const sendBorderColorIcon = Color(0xffF3F6FB);
   static const selectedNav = Color(0xff2d3c52);
   static const unselectedNav = Color(0xff989e9f);
+  static const backgroundProducts = Color(0xfffdfdfd);
 
 
 

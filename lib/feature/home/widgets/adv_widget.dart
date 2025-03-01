@@ -9,8 +9,8 @@ class AdvWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 172.h,
-      left: 20.w,
+      top: 240.h,
+      left: 30.w,
       child: Stack(
         children: [
           ClipRRect(
@@ -60,8 +60,8 @@ class AdvWidget extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(200, -17),
-            child: Image.asset(Assets.pngsImg2,width: 111.w,),
+            offset: Offset(200, -19),
+            child: Image.asset(Assets.pngsImg2,width: 111.w,height: 194.h,),
           )
         ],
       ),

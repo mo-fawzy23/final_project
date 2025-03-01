@@ -1,4 +1,5 @@
 import 'package:final_project/core/constants/app_color.dart';
+import 'package:final_project/generated/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +11,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.backgroundProducts,
       body: SafeArea(child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         width: double.infinity,
@@ -45,7 +46,6 @@ class SearchScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8.h,),
-
 
           ],
         ),

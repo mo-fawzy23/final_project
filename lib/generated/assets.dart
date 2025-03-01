@@ -11,9 +11,11 @@ class Assets {
   static const String pngsImg = 'assets/app/images/pngs/img.png';
   static const String pngsImg1 = 'assets/app/images/pngs/img_1.png';
   static const String pngsImg2 = 'assets/app/images/pngs/img_2.png';
+  static const String pngsImg3 = 'assets/app/images/pngs/img_3.png';
   static const String pngsMasterCard = 'assets/app/images/pngs/master_card.png';
   static const String pngsPayment = 'assets/app/images/pngs/payment.png';
   static const String pngsPaypal = 'assets/app/images/pngs/paypal.png';
+  static const String pngsProfile = 'assets/app/images/pngs/profile.png';
   static const String svgsInbound1 = 'assets/app/images/svgs/inbound1.svg';
   static const String svgsInbound2 = 'assets/app/images/svgs/inbound2.svg';
   static const String svgsInbound3 = 'assets/app/images/svgs/inbound3.svg';

@@ -1,6 +1,9 @@
 import 'package:final_project/core/constants/app_color.dart';
+import 'package:final_project/feature/cart/presentation/cart_screen.dart';
 import 'package:final_project/feature/home/presentation/main_screen.dart';
 import 'package:final_project/feature/home/presentation/notification_screen.dart';
+import 'package:final_project/feature/home/presentation/wishlist_screen.dart';
+import 'package:final_project/feature/profile/presentation/profile_screen.dart';
 import 'package:final_project/feature/search/presentation/search_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +20,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   int index = 0;
   bool isSelected = false;
 
-  List<Widget> pages = [MainScreen(), SearchScreen()];
+  List<Widget> pages = [MainScreen(), SearchScreen(),WishlistScreen(),CartScreen(),ProfileScreen()];
 
   @override
   Widget build(BuildContext context) {

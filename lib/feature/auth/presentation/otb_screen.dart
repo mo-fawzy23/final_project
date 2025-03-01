@@ -1,5 +1,6 @@
 import 'package:final_project/core/constants/app_color.dart';
 import 'package:final_project/core/widgets/custom_confirm_button.dart';
+import 'package:final_project/core/widgets/succes_custom_bottomsheet.dart';
 import 'package:final_project/feature/auth/presentation/login_screen.dart';
 import 'package:final_project/feature/auth/widgets/otb_custom_component.dart';
 import 'package:final_project/generated/assets.dart';
@@ -114,75 +115,20 @@ class OtbScreen extends StatelessWidget {
                     isScrollControlled: true,
                     context: context,
                     builder: (btcontext) {
-                      return Padding(
-                        padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).viewInsets.bottom,
-                        ),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          width: double.infinity,
-                          height: 517.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20.r),
-                              topLeft: Radius.circular(20.r),
+                      return SuccesCustomBottomsheet(
+                        onTapWhere: () {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
                             ),
-                            color: Colors.white,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SizedBox(height: 20.h),
-                              Center(
-                                child: Container(
-                                  width: 66.7.w,
-                                  height: 4.h,
-                                  decoration: BoxDecoration(
-                                    color: AppColor.secondaryText,
-                                    borderRadius: BorderRadius.circular(11.r),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 24.h),
-                              SvgPicture.asset(Assets.svgsOtbSuccess),
-                              SizedBox(height: 24.h),
-                              Text(
-                                textAlign: TextAlign.center,
-                                "Congratulations !",
-                                style: GoogleFonts.plusJakartaSans(
-                                  textStyle: TextStyle(
-                                    fontSize: 24.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColor.primaryText,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 12.h),
-                              Text(
-                                textAlign: TextAlign.center,
-                                "Your account is ready to use. You will be redirected to the Homepage in a few seconds.",
-                                style: GoogleFonts.plusJakartaSans(
-                                  textStyle: TextStyle(
-                                    color: AppColor.secondaryText,
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 24.h),
-                              CustomConfirmButton(
-                                text: "Continue",
-                                onTapWhere: () {
-                                  Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
-                                    ),(predicate) => false);
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
+                            (predicate) => false,
+                          );
+                        },
+                        image: Assets.svgsOtbSuccess,
+                        title: "Congratulations !",
+                        subTitle:
+                            "Your account is ready to use. You will be redirected to the Homepage in a few seconds.",
                       );
                     },
                   );

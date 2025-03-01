@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustonAppbarIcon extends StatelessWidget {
   final Widget icon;
-  const CustonAppbarIcon({super.key, required this.icon});
+  final VoidCallback onPressed;
+   const CustonAppbarIcon({super.key, required this.icon,required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CustonAppbarIcon extends StatelessWidget {
         color: Color(0xfffd919d),
       ),
       child: IconButton(
-          onPressed: () {},
+          onPressed: onPressed,
           icon: icon),
     );
   }
