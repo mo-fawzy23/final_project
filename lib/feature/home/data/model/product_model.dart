@@ -6,6 +6,7 @@ class ProductModel {
   String? category;
   String? image;
   Rating? rating;
+  bool? isFav;
 
   ProductModel(
       {this.id,
@@ -14,7 +15,9 @@ class ProductModel {
         this.description,
         this.category,
         this.image,
-        this.rating});
+        this.rating,
+        this.isFav = false
+      });
 
   ProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

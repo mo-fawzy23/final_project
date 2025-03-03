@@ -1,5 +1,6 @@
 import 'package:final_project/core/constants/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextInput extends StatelessWidget {
@@ -7,6 +8,7 @@ class CustomTextInput extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
   final bool isPassword;
+  final bool foundSuffixIcon;
 
   const CustomTextInput({
     super.key,
@@ -14,6 +16,8 @@ class CustomTextInput extends StatelessWidget {
     required this.labelText,
     required this.controller,
     this.isPassword = false,
+    this.foundSuffixIcon = false,
+
   });
 
   @override
@@ -34,6 +38,7 @@ class CustomTextInput extends StatelessWidget {
           controller: controller,
           obscureText: isPassword,
           decoration: InputDecoration(
+            suffixIcon: foundSuffixIcon ? Icon(Icons.location_on_outlined,size: 26.r,): Container(width: 1,),
             hintText: hintText,
             hintStyle: GoogleFonts.plusJakartaSans(
               fontSize: 16,

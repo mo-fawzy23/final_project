@@ -8,6 +8,7 @@ import 'package:final_project/feature/home/presentation/products_details_screen.
 import 'package:final_project/feature/home/widgets/adv_widget.dart';
 import 'package:final_project/feature/home/widgets/custom_timer.dart';
 import 'package:final_project/feature/home/widgets/custon_appbar_icon.dart';
+
 // import 'package:final_project/feature/home/widgets/list_view_item.dart';
 import 'package:final_project/generated/assets.dart';
 import 'package:flutter/cupertino.dart';
@@ -43,8 +44,12 @@ class MainScreen extends StatelessWidget {
                           Container(
                             width: double.infinity,
                             height: 255.h,
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(14.r),
+                                bottomLeft: Radius.circular(14.r),
+                              ),
+                              gradient: const LinearGradient(
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                                 colors: [
@@ -60,11 +65,12 @@ class MainScreen extends StatelessWidget {
                                 SizedBox(height: 35.h),
                                 ConditionalBuilder(
                                   condition:
-                                      context.watch<HomeCubit>().userData != null,
+                                      context.watch<HomeCubit>().userData !=
+                                      null,
                                   builder: (context) {
                                     var user =
                                         context.watch<HomeCubit>().userData;
-              
+
                                     return Container(
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 20.w,
@@ -144,7 +150,9 @@ class MainScreen extends StatelessWidget {
                                 ),
                                 SizedBox(height: 24.h),
                                 Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                  ),
                                   child: Row(
                                     children: [
                                       Text(
@@ -166,7 +174,7 @@ class MainScreen extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 20.w),
                             // width: double.infinity,
-                            height: 3200.h,
+                            height: 1020.h,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -187,26 +195,28 @@ class MainScreen extends StatelessWidget {
                                       ),
                                       Spacer(),
                                       CustomTimer(),
-              
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 15.h,),
+                                SizedBox(height: 15.h),
                                 Container(
                                   child: ConditionalBuilder(
                                     condition:
-                                    context.read<HomeCubit>().products.isNotEmpty,
+                                        context
+                                            .read<HomeCubit>()
+                                            .products
+                                            .isNotEmpty,
                                     builder:
                                         (context) => buildLoaded(
-                                      context.watch<HomeCubit>().products,
-                                      context,
-                                    ),
+                                          context.watch<HomeCubit>().products,
+                                          context,
+                                        ),
                                     fallback: (context) => buildLoading(),
                                   ),
                                 ),
-                                SizedBox(height: 38.h,),
+                                SizedBox(height: 38.h),
                                 Text(
-                                  "Categories",
+                                  "You May Like",
                                   style: GoogleFonts.plusJakartaSans(
                                     textStyle: TextStyle(
                                       fontWeight: FontWeight.w600,
@@ -215,16 +225,21 @@ class MainScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 16.h,),
+                                SizedBox(height: 16.h),
                                 Container(
                                   child: ConditionalBuilder(
                                     condition:
-                                    context.read<HomeCubit>().products.isNotEmpty,
+                                        context
+                                            .read<HomeCubit>()
+                                            .products
+                                            .isNotEmpty,
                                     builder:
-                                        (context) => buildLoadedGrid(
-                                      context.watch<HomeCubit>().products,
-                                      context,
-                                    ),
+                                        (context) => Expanded(
+                                          child: buildLoadedGrid(
+                                            context.watch<HomeCubit>().products,
+                                            context,
+                                          ),
+                                        ),
                                     fallback: (context) => buildLoading(),
                                   ),
                                 ),
@@ -245,6 +260,7 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
+
 Widget buildLoading() {
   return Center(child: CircularProgressIndicator());
 }
@@ -252,7 +268,7 @@ Widget buildLoading() {
 Widget buildLoaded(List<ProductModel> products, BuildContext contextC) {
   return Container(
     width: double.infinity,
-    height: 240.h,
+    height: 250.h,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       // padding: EdgeInsets.symmetric(horizontal: 11),
@@ -261,54 +277,67 @@ Widget buildLoaded(List<ProductModel> products, BuildContext contextC) {
       itemCount: products.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        return  InkWell(
-          onTap: (){
+        return InkWell(
+          onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder:
                     (context) => BlocProvider.value(
-                  value: BlocProvider.of<HomeCubit>(contextC)
-                    ..getSingleProduct(products[index].id!),
-                  child: ProductsDetailsScreen(),
-                ),
+                      value: BlocProvider.of<HomeCubit>(contextC)
+                        ..getSingleProduct(products[index].id!),
+                      child: ProductsDetailsScreen(),
+                    ),
               ),
             );
           },
           child: Container(
             width: 160.w,
             height: 240.h,
-            margin: EdgeInsets.only(right: 10),
-            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 20.h),
+            margin: EdgeInsets.only(right: 16.w,top: 1.h,bottom: 1.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 20.h),
             decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 5,
-                    spreadRadius: 0.25,
-                  )
-                ],
-                borderRadius: BorderRadius.circular(16.r)
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 5,
+                  spreadRadius: 0.25,
+                ),
+              ],
+              borderRadius: BorderRadius.circular(16.r),
             ),
             child: Column(
               children: [
-                Image.network(products[index].image!,height: 123.h,width: 131.w,),
-                SizedBox(height: 4.h,),
+                Image.network(
+                  products[index].image!,
+                  height: 123.h,
+                  width: 131.w,
+                ),
+                SizedBox(height: 4.h),
                 Text(
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
-                  products[index].title!,style: GoogleFonts.plusJakartaSans(textStyle: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.primaryText
-                )),),
-                SizedBox(height: 4.h,),
-                Text("\$${products[index].price!}",style: GoogleFonts.plusJakartaSans(textStyle: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColor.loginRegisterTextButton,
-                )),),
+                  products[index].title!,
+                  style: GoogleFonts.plusJakartaSans(
+                    textStyle: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: AppColor.primaryText,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 4.h),
+                Text(
+                  "\$${products[index].price!}",
+                  style: GoogleFonts.plusJakartaSans(
+                    textStyle: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColor.loginRegisterTextButton,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -317,32 +346,34 @@ Widget buildLoaded(List<ProductModel> products, BuildContext contextC) {
     ),
   );
 }
+
 Widget buildLoadedGrid(List<ProductModel> products, BuildContext contextD) {
   return Container(
     // width: double.infinity,
-    // height: 240.h,
+    height: 100.h,
     child: GridView.builder(
-
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing: 10,
-          mainAxisSpacing:  25,
-          childAspectRatio: 1 / 1.45,crossAxisCount: 2),
+        crossAxisSpacing: 16.h,
+        mainAxisSpacing: 24.w,
+        childAspectRatio: 1 / 1.45,
+        crossAxisCount: 2,
+      ),
       // padding: EdgeInsets.symmetric(horizontal: 11),
       // scrollDirection: Axis.horizontal,
       // physics: NeverScrollableScrollPhysics(),
       itemCount: products.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        return  InkWell(
-          onTap: (){
+        return InkWell(
+          onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder:
                     (context) => BlocProvider.value(
-                  value: BlocProvider.of<HomeCubit>(contextD)
-                    ..getSingleProduct(products[index].id!),
-                  child: ProductsDetailsScreen(),
-                ),
+                      value: BlocProvider.of<HomeCubit>(contextD)
+                        ..getSingleProduct(products[index].id!),
+                      child: ProductsDetailsScreen(),
+                    ),
               ),
             );
           },
@@ -350,37 +381,50 @@ Widget buildLoadedGrid(List<ProductModel> products, BuildContext contextD) {
             width: 160.w,
             height: 240.h,
             margin: EdgeInsets.only(bottom: 10),
-            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 20.h),
             decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 5,
-                    spreadRadius: 0.25,
-                  )
-                ],
-                borderRadius: BorderRadius.circular(16.r)
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 5,
+                  spreadRadius: 0.25,
+                ),
+              ],
+              borderRadius: BorderRadius.circular(16.r),
             ),
             child: Column(
               children: [
-                Image.network(products[index].image!,height: 123.h,width: 131.w,),
-                SizedBox(height: 4.h,),
+                Image.network(
+                  products[index].image!,
+                  height: 123.h,
+                  width: 131.w,
+                ),
+                SizedBox(height: 4.h),
                 Text(
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
-                  products[index].title!,style: GoogleFonts.plusJakartaSans(textStyle: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.primaryText
-                )),),
-                SizedBox(height: 4.h,),
-                Text("\$${products[index].price!}",style: GoogleFonts.plusJakartaSans(textStyle: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColor.loginRegisterTextButton,
-                )),),
+                  products[index].title!,
+                  style: GoogleFonts.plusJakartaSans(
+                    textStyle: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: AppColor.primaryText,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 4.h),
+                Text(
+                  "\$${products[index].price!}",
+                  style: GoogleFonts.plusJakartaSans(
+                    textStyle: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColor.loginRegisterTextButton,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

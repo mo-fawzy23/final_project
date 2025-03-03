@@ -14,7 +14,6 @@ class HomeCubit extends Cubit<HomeState> {
   List<ProductModel> products = [];
 
   ProductModel ? product ;
-
   void getUserData() {
     emit(HomeUserLoading());
     DioHelper.getData(url: EndPoints.currentUserDataEndpoint).then((value) {
@@ -98,6 +97,35 @@ class HomeCubit extends Cubit<HomeState> {
     });
 
   }
+  // void favProduct(int id) {
+  //   product = null;
+  //   emit(FavLoading());
+  //   DioHelper.getData(url: "${EndPoints.productByIdEndpoint}$id").then((value) {
+  //     if (value.statusCode == 200 && value.data != null) {
+  //       product = ProductModel.fromJson(value.data);
+  //       emit(FavLoaded());
+  //     } else {
+  //       emit(FavError("Error"));
+  //     }
+  //   }).catchError((error) {
+  //     emit(FavError(error.toString()));
+  //   });
+  //
+  // }
+void productFav(int id){
+  int index = products.indexWhere((product) => product.id == id);
+  if(index != -1){
+    if(products[index].isFav == false){
+      products[index].isFav = true;
+    }
+    else
+      {
+        products[index].isFav = false;
+
+      }
+    emit(FavChangeColor());
+  }
+}
 
 
 }

@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
               Navigator.pop(context);
               Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) =>  HomeLayout()),
+                MaterialPageRoute(builder: (context) =>  FirstInboundScreen()),
                 (predicate) => false,
               );
               ScaffoldMessenger.of(

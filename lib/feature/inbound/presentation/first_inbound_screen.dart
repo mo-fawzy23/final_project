@@ -4,6 +4,7 @@ import 'package:final_project/feature/inbound/presentation/second_inbound_screen
 import 'package:final_project/feature/inbound/widgets/custom_circle_progress.dart';
 import 'package:final_project/feature/inbound/widgets/inbound_widget.dart';
 import 'package:final_project/generated/assets.dart';
+import 'package:final_project/layout/home_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +23,7 @@ class FirstInboundScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const MainScreen()),
+                MaterialPageRoute(builder: (context) => const HomeLayout()),
               );
             },
             child: Text(

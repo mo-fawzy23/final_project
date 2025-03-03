@@ -33,3 +33,13 @@ final class ProductDetailsError extends HomeState {
 
   ProductDetailsError(this.message);
 }
+final class FavLoading extends HomeState {}
+
+final class FavLoaded extends HomeState {}
+
+final class FavError extends HomeState {
+  final String message;
+
+  FavError(this.message);
+}
+final class FavChangeColor extends HomeState {}

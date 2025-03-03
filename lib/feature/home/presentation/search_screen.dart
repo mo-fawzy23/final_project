@@ -90,8 +90,8 @@ Widget buildLoadedGrid2(List<ProductModel> products, BuildContext contextF) {
     child: GridView.builder(
 
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing: 10,
-          mainAxisSpacing:  25,
+          crossAxisSpacing: 16.h,
+          mainAxisSpacing:  24.w,
           childAspectRatio: 1 / 1.45,crossAxisCount: 2),
       // padding: EdgeInsets.symmetric(horizontal: 11),
       // scrollDirection: Axis.horizontal,

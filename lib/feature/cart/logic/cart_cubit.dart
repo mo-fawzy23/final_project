@@ -1,4 +1,5 @@
 import 'package:final_project/core/network/local/data_base/local_db_helper.dart';
+import 'package:final_project/feature/home/data/model/product_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -8,6 +9,7 @@ part 'cart_state.dart';
 class CartCubit extends Cubit<CartState> {
   CartCubit() : super(CartInitial());
   double totalPrice = 0;
+
   List<ProductCartModel> products = [];
 
   Future<void> getCartData() async {
@@ -39,7 +41,9 @@ class CartCubit extends Cubit<CartState> {
   void calculateTotalPrice() {
     totalPrice = 0;
     for (int i = 0; i < products.length; i++) {
-      totalPrice += products[i].quantity! * products[i].price!.toDouble();
+      totalPrice += (products[i].quantity! * products[i].price!.toDouble());
+      totalPrice = double.parse(totalPrice.toStringAsFixed(2));
     }
+
   }
 }
